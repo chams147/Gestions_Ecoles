@@ -5,6 +5,7 @@ import Modeles.Eleve;
 import Modeles.Persone;
 import Modeles.Profeseur;
 import Services.SchoolService;
+import Tools.Actions;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
@@ -54,9 +55,9 @@ String nom;
 */
                   //2eme méthode
                   case"trouvereleve" :
-                   Hmi.chercher(1);
+                   Hmi.chercher(Actions.Student);
                   case"trouverprof": // pk si il exite espace ne fonctione pas par exple " trouver prof
-                   Hmi.chercher(2);
+               Hmi.chercher(Actions.Teacher);
 
 
               }
@@ -174,14 +175,14 @@ String nom;
 
        //2eme methode
 
-    public static void chercher(int action){
+    public static void chercher(Actions action){
         Scanner reader=new Scanner(System.in);
         Persone p;
         String nom;
         System.out.println("entrer le nom de:");
         nom=reader.next();
 
-            if (action==1)
+        if (action==Actions.Student)
              p=Hmi.schoolService.findEleveByName(nom);
             else
               p=schoolService.findProfByName(nom);

@@ -44,7 +44,7 @@ public void removeEléve(Eleve e){
     }
     public Eleve findEleveByName(String name) {
         for (Eleve eleve : this.monecole.getEleves()) {
-            if (eleve.getNom().equals(name)) //pk il faut utulser equal avec les chaines de caracteres
+            if (eleve.getNom().toUpperCase().equals(name.toUpperCase())) //pk il faut utulser equal avec les chaines de caracteres
                 return eleve;
 
         }
