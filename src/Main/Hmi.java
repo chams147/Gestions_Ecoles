@@ -213,13 +213,21 @@ String nom;
 
 
     }*/
+    /*
+public static void removeperson() {
 
 
 
+    if (p instanceof Eleve)
+        Hmi.schoolService.removeEléve((Eleve) p);
+    else {
+        Hmi.schoolService.removeEléve((Eleve) p);
+    }
 
 
 
-
+}
+*/
 
 
     public  void affichage(){
