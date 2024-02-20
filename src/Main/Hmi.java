@@ -55,9 +55,21 @@ String nom;
 */
                   //2eme méthode
                   case"trouvereleve" :
-                   Hmi.chercher(Actions.Student);
+                  Persone p= Hmi.chercher(Actions.Student);
+                  printdataperson(p);
+                  break;
                   case"trouverprof": // pk si il exite espace ne fonctione pas par exple " trouver prof
-               Hmi.chercher(Actions.Teacher);
+              Persone p2= Hmi.chercher(Actions.Teacher);
+              printdataperson(p2);
+              break;
+                  case"suppeleve":
+                      Hmi.removeperson(Actions.Student);
+                      break;
+                  case"supprof":
+                      Hmi.removeperson(Actions.Teacher);
+                      break;
+
+
 
 
               }
@@ -175,7 +187,7 @@ String nom;
 
        //2eme methode
 
-    public static void chercher(Actions action){
+    public static Persone chercher(Actions action){
         Scanner reader=new Scanner(System.in);
         Persone p;
         String nom;
@@ -187,6 +199,13 @@ String nom;
             else
               p=schoolService.findProfByName(nom);
 
+ return p;
+
+    }
+
+
+    public static void printdataperson(Persone p){
+
         if(p==null)
             System.out.println("Not found");
 
@@ -194,7 +213,6 @@ String nom;
 
         else
             System.out.println(p.getdata());
-
 
     }
 
@@ -213,21 +231,21 @@ String nom;
 
 
     }*/
-    /*
-public static void removeperson() {
+
+public static void removeperson(Actions action) {
 
 
-
+Persone p=Hmi.chercher(action);
     if (p instanceof Eleve)
         Hmi.schoolService.removeEléve((Eleve) p);
     else {
-        Hmi.schoolService.removeEléve((Eleve) p);
+        Hmi.schoolService.removeprof((Profeseur) p);
     }
 
 
 
 }
-*/
+
 
 
     public  void affichage(){

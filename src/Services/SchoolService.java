@@ -35,7 +35,7 @@ public void removeEléve(Eleve e){
 
 }
     public void removeprof(Profeseur p){
-        this.monecole.getEleves().remove(p);
+        this.monecole.getProfeseurs().remove(p);
 
     }
     public void removeNiveauscolaire(NiveauScolaire ns){
